@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class TesteFabricaController {
 
     @Autowired
-    @Qualifier("motorEletrico")
+//    @Qualifier("motorEletrico")
+    // Tirei o Qualifier, Após isso da erro pois não tem o motor para ser utilizado.
+    // O problema pode ser resolvido com @Primary na configuration, dessa forma o motor que estiver com a anotação será utilizado caso não tenha o qualifier no controller.
+    @Turbo
     private Motor motor;
 
     @PostMapping
