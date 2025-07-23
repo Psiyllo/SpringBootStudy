@@ -11,6 +11,10 @@ public class MailSender {
         this.repository = repository;
     }
 
+    public MailSender() {
+
+    }
+
     public void enviar (String mensagem){
         System.out.println("Enviando email: " + mensagem);
 

@@ -21,7 +21,7 @@ public class ExemploInjecaoDependencia {
 
          EntityManager entityManager = null;
 
-         TodoRepository repository = new SimpleJpaRepository<TodoEntity, Integer>();
+         TodoRepository repository = null; //new SimpleJpaRepository<TodoEntity, Integer>(null, null);
          TodoValidator validator = new TodoValidator(repository);
          MailSender sender = new MailSender();
 
