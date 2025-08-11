@@ -4,10 +4,12 @@ import io.github.Psiyllo.arquiteturaspring.todos.TodoEntity;
 import io.github.Psiyllo.arquiteturaspring.todos.TodoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
+//@Lazy(Value = true) - Comportamento lazy serve para que os beans sejam instanciados apenas quando for utilizados.
 @Component
 //@Scope(BeanDefinition.SCOPE_SINGLETON) - Padrão, cria apenas uma instância.
 //@Scope(WebApplicationContext.SCOPE_REQUEST) - Bom para desenvolvimento web, cria uma instância para cada requisição HTTP

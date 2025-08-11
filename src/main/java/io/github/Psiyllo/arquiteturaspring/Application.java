@@ -18,6 +18,7 @@ public class Application {
 
 		//The following 2 profiles are active: "producao", "homologacao"
 		builder.profiles("producao", "homologacao");
+		//builder.lazyInitialization(true); - Todos os meus beans serão lazy
 
 		builder.run(args);
 
