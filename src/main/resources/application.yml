@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Arquitetura Spring
+  jpa:
+    show-sql: true
+  main:
+    lazy-initialization: false
+
+server:
+  port: 9090
+
+app:
+  config:
+    variavel: X
