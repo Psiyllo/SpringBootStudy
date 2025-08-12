@@ -21,6 +21,7 @@ public class BeanGerenciado {
     private TodoValidator validator;
 
     //Fazer injeção de dependência via construtor é o padrão mais adequado e recomendado pelo spring.
+
     public BeanGerenciado(TodoValidator validator) {
         this.validator = validator;
     }

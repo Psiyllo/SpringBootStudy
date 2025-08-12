@@ -12,5 +12,7 @@ server:
 app:
   config:
     variavel: Pode por oque voce quiser aqui pois estou utilizando o value pra pegar
+    valor1: 2100
+    valor2: 1500
   montadora:
     motor-padrao: 150
