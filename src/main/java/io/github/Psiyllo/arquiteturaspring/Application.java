@@ -30,5 +30,8 @@ public class Application {
 		ConfigurableEnvironment enviroment = applicationContext.getEnvironment();
 		String applicationName = enviroment.getProperty("spring.application.name");
 		System.out.println("nome da aplicação: " + applicationName);
+
+		ExemploValue value = applicationContext.getBean(ExemploValue.class);
+		value.imprimirVariavel();
 	}
 }

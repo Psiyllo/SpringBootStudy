@@ -11,4 +11,6 @@ server:
 
 app:
   config:
-    variavel: X
+    variavel: Pode por oque voce quiser aqui pois estou utilizando o value pra pegar
+  montadora:
+    motor-padrao: 150
