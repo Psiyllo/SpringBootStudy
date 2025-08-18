@@ -1,2 +1,3 @@
 io\github\Psyllo\libraryapi\config\DatabaseConfiguration.class
 io\github\Psyllo\libraryapi\LibraryapiApplication.class
+io\github\Psyllo\libraryapi\model\Autor.class
