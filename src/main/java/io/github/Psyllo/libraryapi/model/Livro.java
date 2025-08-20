@@ -1,8 +1,7 @@
 package io.github.Psyllo.libraryapi.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,8 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "livro")
-@Getter
-@Setter
+@Data // = @Getter @Setter @ToString @EqualsAndHashCode @RequiredArgsConstructor @NoArgsConstructor @AllArgsConstructor
 public class Livro {
 
     @Id
@@ -26,8 +24,9 @@ public class Livro {
     @Column(name = "data_publicacao", nullable = false)
     private LocalDate dataPublicacao;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "genero", length = 30, nullable = false)
-    private String genero;
+    private GeneroLivro genero;
 
     @Column(name = "preco", precision = 18, scale = 2)
     private Double preco;
