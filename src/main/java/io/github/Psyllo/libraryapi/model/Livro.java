@@ -29,8 +29,7 @@ public class Livro {
     private GeneroLivro genero;
 
     @Column(name = "preco", precision = 18, scale = 2)
-    private Double preco;
-//    private BigDecimal preco;       BigDecimal melhor para valores monetários
+    private BigDecimal preco;
 
     @ManyToOne
     @JoinColumn (name = "id_autor")

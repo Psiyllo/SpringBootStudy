@@ -1,3 +1,7 @@
 io\github\Psyllo\libraryapi\config\DatabaseConfiguration.class
-io\github\Psyllo\libraryapi\LibraryapiApplication.class
+io\github\Psyllo\libraryapi\model\GeneroLivro.class
 io\github\Psyllo\libraryapi\model\Autor.class
+io\github\Psyllo\libraryapi\model\Livro.class
+io\github\Psyllo\libraryapi\repository\LivroRepository.class
+io\github\Psyllo\libraryapi\LibraryapiApplication.class
+io\github\Psyllo\libraryapi\repository\AutorRepository.class
