@@ -13,6 +13,7 @@ import java.util.UUID;
 public class Livro {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(name = "isbn", length = 20, nullable = false)
