@@ -77,4 +77,30 @@ class LivroRepositoryTest {
 
         repository.save(livro);
     }
+
+    @Test
+    void atualizarAutorDoLivro(){
+        UUID id = UUID.fromString("ba9ec9c8-eb5d-40f5-8bf9-7815a6a8faca");
+        var livroParaAtualizar = repository.findById(id).orElse(null);
+
+        UUID idAutor = UUID.fromString("612668f2-0577-4202-a902-cab7775338ca");
+        Autor Eduarda = autorRepository.findById(idAutor).orElse(null);
+
+        livroParaAtualizar.setAutor(Eduarda);
+
+        repository.save(livroParaAtualizar);
+    }
+
+    @Test
+    void deletar(){
+        UUID id = UUID.fromString("ba9ec9c8-eb5d-40f5-8bf9-7815a6a8faca");
+        repository.deleteById(id);
+    }
+
+    @Test
+    void deletarCascade(){
+        UUID id = UUID.fromString("ba9ec9c8-eb5d-40f5-8bf9-7815a6a8faca");
+        repository.deleteById(id);
+        //Se habilitar o cascade na model isso ira deletar o livro e também o autor do livro.
+    }
 }
