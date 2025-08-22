@@ -1,11 +1,15 @@
 package io.github.Psyllo.libraryapi.repository;
 
 import io.github.Psyllo.libraryapi.model.Autor;
+import io.github.Psyllo.libraryapi.model.GeneroLivro;
+import io.github.Psyllo.libraryapi.model.Livro;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -15,6 +19,9 @@ public class AutoRepositoryTest {
 
     @Autowired
     AutorRepository repository;
+
+    @Autowired
+    LivroRepository livroRepository;
 
     @Test
     public void salvarTest(){
@@ -68,5 +75,36 @@ public class AutoRepositoryTest {
         var id = UUID.fromString("6fff7d3b-71e1-4402-b6bf-0328a32b3cee");
         var paulo = repository.findById(id).get();
         repository.delete(paulo);
+    }
+    @Test
+    void salvarAutorComLivrosTest(){
+        Autor autor = new Autor();
+        autor.setNome("Jonathan Rodrigues dos Reis");
+        autor.setNacionalidade("Brasileiro");
+        autor.setDataNascimento(LocalDate.of(2004, 1, 30));
+
+        Livro livro = new Livro();
+        livro.setIsbn("702312-67843");
+        livro.setPreco(BigDecimal.valueOf(100000000));
+        livro.setTitulo("Wunthering Waves no Godot");
+        livro.setGenero(GeneroLivro.FANTASIA);
+        livro.setDataPublicacao(LocalDate.of(2025, 8, 22));
+        livro.setAutor(autor);
+
+        Livro livro2 = new Livro();
+        livro2.setIsbn("415342-93243");
+        livro2.setPreco(BigDecimal.valueOf(2));
+        livro2.setTitulo("genshin impact lixo");
+        livro2.setGenero(GeneroLivro.FANTASIA);
+        livro2.setDataPublicacao(LocalDate.of(2025, 8, 22));
+        livro2.setAutor(autor);
+
+        autor.setLivros(new ArrayList<>());
+        autor.getLivros().add(livro);
+        autor.getLivros().add(livro2);
+
+        repository.save(autor);
+
+        livroRepository.saveAll(autor.getLivros());
     }
 }
