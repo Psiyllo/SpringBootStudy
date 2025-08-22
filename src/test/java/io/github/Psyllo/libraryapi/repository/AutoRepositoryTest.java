@@ -104,7 +104,7 @@ public class AutoRepositoryTest {
         autor.getLivros().add(livro2);
 
         repository.save(autor);
-
-        livroRepository.saveAll(autor.getLivros());
+//        Ativado cascade = CascadeType.ALL pois só faz sentido o cadastro do livro nesse formulário se o mesmo possuir autor.
+//        livroRepository.saveAll(autor.getLivros());
     }
 }
