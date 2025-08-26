@@ -13,7 +13,7 @@ import java.util.UUID;
 @Table(name = "autor", schema = "public") //Quando public não é necessário botar o schema, coloquei apenas para didática.
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "livros")
 public class Autor {
 
     @Id

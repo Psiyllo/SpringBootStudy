@@ -10,6 +10,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "livro")
 @Data // = @Getter @Setter @ToString @EqualsAndHashCode @RequiredArgsConstructor @NoArgsConstructor @AllArgsConstructor
+@ToString(exclude = "autor")
 public class Livro {
 
     @Id
