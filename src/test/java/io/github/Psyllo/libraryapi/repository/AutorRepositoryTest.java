@@ -6,6 +6,7 @@ import io.github.Psyllo.libraryapi.model.Livro;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootTest
-public class AutoRepositoryTest {
+public class AutorRepositoryTest {
 
     @Autowired
     AutorRepository repository;
@@ -106,5 +107,16 @@ public class AutoRepositoryTest {
         repository.save(autor);
 //        Ativado cascade = CascadeType.ALL pois só faz sentido o cadastro do livro nesse formulário se o mesmo possuir autor.
 //        livroRepository.saveAll(autor.getLivros());
+    }
+
+    @Test
+    void listarLivrosAutor(){
+        var id = UUID.fromString("3407bc7c-5b7b-40a1-9407-ff1453f6f645");
+        var autor = repository.findById(id).get();
+
+        List<Livro> livrosListar = livroRepository.findByAutor(autor);
+        autor.setLivros(livrosListar);
+
+        autor.getLivros().forEach(System.out::println);
     }
 }
