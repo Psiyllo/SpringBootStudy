@@ -152,4 +152,12 @@ class LivroRepositoryTest {
         listaTituloAndPreco.forEach(System.out::println);
     }
 
+    @Test
+    void listarLivrosTituloLike(){
+        var tituloLike = "%impact%";
+
+        List<Livro> listaTituloLike = livroRepository.findByTituloLike(tituloLike);
+        listaTituloLike.forEach(System.out::println);
+    }
+
 }
