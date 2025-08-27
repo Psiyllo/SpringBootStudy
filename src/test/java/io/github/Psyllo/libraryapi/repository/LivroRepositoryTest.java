@@ -160,4 +160,33 @@ class LivroRepositoryTest {
         listaTituloLike.forEach(System.out::println);
     }
 
+    @Test
+    void listarLivrosOrdenadosTituloAndPreco(){
+        var listaOrdenada = livroRepository.listarTodosLivrosOrdenadosTituloAndPreco();
+        listaOrdenada.forEach(System.out::println);
+    }
+
+    @Test
+    void listarAutoresDosLivros(){
+        var listaAutores = livroRepository.listarAutoresDosLivros();
+        listaAutores.forEach(System.out::println);
+    }
+
+    @Test
+    void listarTitulosDiferentes(){
+        var listaDiferente = livroRepository.listarLivrosDiferentes();
+        listaDiferente.forEach(System.out::println);
+    }
+
+    @Test
+    void listarGeneroQuandoNacionalidadeBrasileira(){
+        var listarGenero = livroRepository.listarGeneroQuandoNacionalidadeBrasileira();
+        listarGenero.forEach(System.out::println);
+    }
+
+    @Test
+    void listarTituloPreco(){
+        var listarTituloPreco = livroRepository.listarTituloAndPreco();
+        listarTituloPreco.forEach(System.out::println);
+    }
 }
