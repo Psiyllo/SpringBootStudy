@@ -121,7 +121,7 @@ class LivroRepositoryTest {
     }
 
     @Test
-    void listarLivrosAutor(){
+    void listarLivrosAutor() {
         var id = UUID.fromString("3407bc7c-5b7b-40a1-9407-ff1453f6f645");
         var autor = autorRepository.findById(id).get();
 
@@ -132,19 +132,19 @@ class LivroRepositoryTest {
     }
 
     @Test
-    void listarLivrosTitulo(){
+    void listarLivrosTitulo() {
         List<Livro> lista = livroRepository.findByTitulo("genshin impact lixo");
         lista.forEach(System.out::println);
     }
 
     @Test
-    void listarLivrosIsbn(){
+    void listarLivrosIsbn() {
         List<Livro> listaIsbn = livroRepository.findByIsbn("415342-93243");
         listaIsbn.forEach(System.out::println);
     }
 
     @Test
-    void listarLivrosTituloAndPreco(){
+    void listarLivrosTituloAndPreco() {
         var preco = BigDecimal.valueOf(2.00);
         var titulo = "genshin impact lixo";
 
@@ -153,7 +153,7 @@ class LivroRepositoryTest {
     }
 
     @Test
-    void listarLivrosTituloLike(){
+    void listarLivrosTituloLike() {
         var tituloLike = "%impact%";
 
         List<Livro> listaTituloLike = livroRepository.findByTituloLike(tituloLike);
@@ -161,46 +161,56 @@ class LivroRepositoryTest {
     }
 
     @Test
-    void listarLivrosOrdenadosTituloAndPreco(){
+    void listarLivrosOrdenadosTituloAndPreco() {
         var listaOrdenada = livroRepository.listarTodosLivrosOrdenadosTituloAndPreco();
         listaOrdenada.forEach(System.out::println);
     }
 
     @Test
-    void listarAutoresDosLivros(){
+    void listarAutoresDosLivros() {
         var listaAutores = livroRepository.listarAutoresDosLivros();
         listaAutores.forEach(System.out::println);
     }
 
     @Test
-    void listarTitulosDiferentes(){
+    void listarTitulosDiferentes() {
         var listaDiferente = livroRepository.listarLivrosDiferentes();
         listaDiferente.forEach(System.out::println);
     }
 
     @Test
-    void listarGeneroQuandoNacionalidadeBrasileira(){
+    void listarGeneroQuandoNacionalidadeBrasileira() {
         var listarGenero = livroRepository.listarGeneroQuandoNacionalidadeBrasileira();
         listarGenero.forEach(System.out::println);
     }
 
     @Test
-    void listarTituloPreco(){
+    void listarTituloPreco() {
         var listarTituloPreco = livroRepository.listarTituloAndPreco();
         listarTituloPreco.forEach(System.out::println);
     }
 
     @Test
-    void listarGeneroNamedParam(){
+    void listarGeneroNamedParam() {
         var listarGeneroParam = livroRepository.findByGenero(
                 GeneroLivro.FANTASIA, "dataPublicacao");
         listarGeneroParam.forEach(System.out::println);
     }
 
     @Test
-    void listarGeneroPositionalParam(){
+    void listarGeneroPositionalParam() {
         var listarGeneroParam = livroRepository.findByGeneroPositionalParameters(
                 GeneroLivro.FANTASIA, "dataPublicacao");
         listarGeneroParam.forEach(System.out::println);
+    }
+
+    @Test
+    void deletarPorGenero() {
+        livroRepository.deleteByGenero(GeneroLivro.CIENCIA);
+    }
+
+    @Test
+    void AtualizarPorGenero() {
+        livroRepository.updateByGenero(GeneroLivro.CIENCIA, UUID.fromString("2401d59c-3614-4c27-9973-8c2d23429638"));
     }
 }
