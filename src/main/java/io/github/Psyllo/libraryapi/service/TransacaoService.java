@@ -24,6 +24,12 @@ public class TransacaoService {
     @Transactional
     public void executar(){
 
+        /**
+         * Commit -> Se até o final da transação tudo ocorrer sem nenhum erro, é dado um commit nas alterações
+         * Rollback -> Se durante qualquer uma das operações ocorrer erro, é dado um rollback nas alteraões
+         * Isso se da pois a transactional so da o commit/rollback no final de todas as operações(no fechamento da transactional)
+         */
+
         Autor autor = new Autor();
         autor.setNome("Wendhel1");
         autor.setNacionalidade("Brasileiro");
