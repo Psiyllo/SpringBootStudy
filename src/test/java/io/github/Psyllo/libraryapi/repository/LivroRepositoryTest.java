@@ -27,11 +27,11 @@ class LivroRepositoryTest {
     @Test
     void salvarTest() {
         Livro livro = new Livro();
-        livro.setIsbn("901212-23213");
-        livro.setPreco(BigDecimal.valueOf(200));
-        livro.setTitulo("LOM");
-        livro.setGenero(GeneroLivro.MISTERIO);
-        livro.setDataPublicacao(LocalDate.of(2013, 8, 28));
+        livro.setIsbn("901212-42369");
+        livro.setPreco(BigDecimal.valueOf(19));
+        livro.setTitulo("Risk Of Rain2");
+        livro.setGenero(GeneroLivro.FANTASIA);
+        livro.setDataPublicacao(LocalDate.of(2022, 4, 5));
 
         Autor autor = autorRepository
                 .findById(UUID.fromString("612668f2-0577-4202-a902-cab7775338ca"))
@@ -188,5 +188,19 @@ class LivroRepositoryTest {
     void listarTituloPreco(){
         var listarTituloPreco = livroRepository.listarTituloAndPreco();
         listarTituloPreco.forEach(System.out::println);
+    }
+
+    @Test
+    void listarGeneroNamedParam(){
+        var listarGeneroParam = livroRepository.findByGenero(
+                GeneroLivro.FANTASIA, "dataPublicacao");
+        listarGeneroParam.forEach(System.out::println);
+    }
+
+    @Test
+    void listarGeneroPositionalParam(){
+        var listarGeneroParam = livroRepository.findByGeneroPositionalParameters(
+                GeneroLivro.FANTASIA, "dataPublicacao");
+        listarGeneroParam.forEach(System.out::println);
     }
 }

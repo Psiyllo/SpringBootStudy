@@ -1,9 +1,11 @@
 package io.github.Psyllo.libraryapi.repository;
 
 import io.github.Psyllo.libraryapi.model.Autor;
+import io.github.Psyllo.libraryapi.model.GeneroLivro;
 import io.github.Psyllo.libraryapi.model.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -58,4 +60,14 @@ public interface LivroRepository extends JpaRepository<Livro, UUID> {
 
     @Query(" select l.titulo, l.preco from Livro l order by l.titulo")
     List<LivroTituloPreco> listarTituloAndPreco();
+
+    //named parameters -> parametros nomeados
+    @Query(" select l from Livro l where l.genero = :genero order by :nomePropriedade")
+    List<Livro> findByGenero(
+            @Param("genero") GeneroLivro generoLivro,
+            @Param("nomePropriedade") String nomePropriedade);
+
+    //positional parameters
+    @Query(" select l from Livro l where l.genero = ?1 order by ?2")
+    List<Livro> findByGeneroPositionalParameters(GeneroLivro generoLivro, String nomePropriedade);
 }
