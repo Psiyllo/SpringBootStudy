@@ -6,6 +6,11 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 #  A nível de estudo é interessante a utilização do ddl-auto, pois ele cria as tabelas sozinho sem a necessidade de scripts SQL
 #  jpa:
 #    show-sql: true
