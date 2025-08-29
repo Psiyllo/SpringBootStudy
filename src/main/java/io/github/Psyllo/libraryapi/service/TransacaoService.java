@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Service
 public class TransacaoService {
@@ -20,6 +21,19 @@ public class TransacaoService {
 
     @Autowired
     AutorRepository autorRepository;
+
+    @Transactional
+    public void atualizacaoSemAtualizar(){
+        var livro = livroRepository.findById(UUID.fromString("075888f2-2265-43bc-9d7b-e2fe0f24b6c3")).orElse(null);
+        livro.setDataPublicacao(LocalDate.of(2012,06,30));
+
+        /**
+         * Não é necessário o save pois está anotado com @Transactional.
+         * Portanto o estado dentro da anotação está managed e após o fechamento caso nada dê erro, ele fará o commit para o banco automaticamente.
+         * Por isso o .save não é necessário no jpa caso esteja anotado com Transactional
+         */
+//        livroRepository.save(livro);
+    }
 
     @Transactional
     public void executar(){
