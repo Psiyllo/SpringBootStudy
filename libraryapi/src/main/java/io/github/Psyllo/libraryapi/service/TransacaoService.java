@@ -23,6 +23,24 @@ public class TransacaoService {
     AutorRepository autorRepository;
 
     @Transactional
+    public void salvarItemComFoto(){
+        //salvar livro
+        //repository.save(livro);
+
+        //pega o id do livro
+        //var id = livro.getId();
+
+        //salvar foto do livro -> bucket na nuvem
+        //bucketService.salvar(livro.getFoto(), id + ".png")
+
+        //atualizar nome do arquivo que foi salvo
+        //livro.setNomeArquivoFoto(id + ".png")
+
+        //lembrando que não precisa da seguinte linha, pois está em estado managed portando sera commitado automaticamente ao final do método
+        //repository.save(livro)
+    }
+
+    @Transactional
     public void atualizacaoSemAtualizar(){
         var livro = livroRepository.findById(UUID.fromString("075888f2-2265-43bc-9d7b-e2fe0f24b6c3")).orElse(null);
         livro.setDataPublicacao(LocalDate.of(2012,06,30));
