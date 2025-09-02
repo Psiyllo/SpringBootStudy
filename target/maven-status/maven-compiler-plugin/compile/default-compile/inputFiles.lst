@@ -1,8 +1,11 @@
-C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Livro.java
-C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\LibraryapiApplication.java
-C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\AutorRepository.java
-C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\LivroRepository.java
-C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\DatabaseConfiguration.java
-C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\GeneroLivro.java
-C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\TransacaoService.java
-C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Autor.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\AutorService.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\AutorDTO.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\GeneroLivro.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Autor.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\TransacaoService.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\AutorRepository.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\LivroRepository.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\DatabaseConfiguration.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\LibraryapiApplication.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\AutorController.java
+C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Livro.java

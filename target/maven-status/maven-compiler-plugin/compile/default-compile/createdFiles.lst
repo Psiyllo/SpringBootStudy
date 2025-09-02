@@ -1,9 +1,12 @@
-io\github\Psyllo\libraryapi\service\TransacaoService.class
 io\github\Psyllo\libraryapi\config\DatabaseConfiguration.class
-io\github\Psyllo\libraryapi\model\GeneroLivro.class
 io\github\Psyllo\libraryapi\model\Autor.class
 io\github\Psyllo\libraryapi\model\Livro.class
-io\github\Psyllo\libraryapi\repository\LivroRepository.class
 io\github\Psyllo\libraryapi\LibraryapiApplication.class
+io\github\Psyllo\libraryapi\controller\AutorController.class
+io\github\Psyllo\libraryapi\service\AutorService.class
+io\github\Psyllo\libraryapi\service\TransacaoService.class
+io\github\Psyllo\libraryapi\model\GeneroLivro.class
+io\github\Psyllo\libraryapi\controller\dto\AutorDTO.class
+io\github\Psyllo\libraryapi\repository\LivroRepository.class
 io\github\Psyllo\libraryapi\repository\AutorRepository.class
 io\github\Psyllo\libraryapi\repository\LivroRepository$LivroTituloPreco.class
