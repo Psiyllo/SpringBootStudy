@@ -4,7 +4,7 @@ import io.github.Psyllo.libraryapi.model.Autor;
 
 import java.time.LocalDate;
 
-public record AutorDTO (
+public record AutorRequestDTO(
         String nome,
         LocalDate dataNascimento,
         String nacionalidade) {
