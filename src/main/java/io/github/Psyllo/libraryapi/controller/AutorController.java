@@ -1,17 +1,16 @@
 package io.github.Psyllo.libraryapi.controller;
 
-import io.github.Psyllo.libraryapi.controller.dto.AutorDTO;
+import io.github.Psyllo.libraryapi.controller.dto.AutorRequestDTO;
+import io.github.Psyllo.libraryapi.controller.dto.AutorResponseDTO;
 import io.github.Psyllo.libraryapi.model.Autor;
 import io.github.Psyllo.libraryapi.service.AutorService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("autores")
@@ -25,7 +24,7 @@ public class AutorController{
     }
 
     @PostMapping
-    public ResponseEntity<Void> salvar(@RequestBody AutorDTO autor){
+    public ResponseEntity<Void> salvar(@RequestBody AutorRequestDTO autor){
         Autor autorEntidade = autor.mapearParaAutor();
         service.salvar(autorEntidade);
 
@@ -36,5 +35,20 @@ public class AutorController{
                 .toUri();
 
         return ResponseEntity.created(location).build();
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<AutorResponseDTO> obterDetalhes(@PathVariable("id") String id){
+        var idAutor = UUID.fromString(id);
+        Optional<Autor> autorOptional = service.obterPorId(idAutor);
+        if(autorOptional.isPresent()){
+            Autor autor = autorOptional.get();
+            AutorResponseDTO autorResponseDTO = new AutorResponseDTO(autor.getId(),
+                    autor.getNome(),
+                    autor.getDataNascimento(),
+                    autor.getNacionalidade());
+            return ResponseEntity.ok(autorResponseDTO);
+        }
+        return ResponseEntity.notFound().build();
     }
 }
