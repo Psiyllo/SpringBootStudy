@@ -2,6 +2,7 @@ package io.github.Psyllo.libraryapi.service;
 
 import io.github.Psyllo.libraryapi.model.Autor;
 import io.github.Psyllo.libraryapi.repository.AutorRepository;
+import io.github.Psyllo.libraryapi.validator.AutorValidator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,12 +15,16 @@ public class AutorService {
 
     private final AutorRepository repository;
 
-    public AutorService(AutorRepository repository){
+    private final AutorValidator validator;
+
+    public AutorService(AutorRepository repository, AutorValidator validator) {
         this.repository = repository;
+        this.validator = validator;
     }
 
     @Transactional
     public Autor salvar (Autor autor){
+        validator.validar(autor);
         return repository.save(autor);
     }
 
@@ -28,6 +33,7 @@ public class AutorService {
         if(autor.getId() == null){
             throw new RuntimeException("O Autor já precisa estar salvo");
         }
+        validator.validar(autor);
         repository.save(autor);
     }
 
