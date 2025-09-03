@@ -23,6 +23,14 @@ public class AutorService {
         return repository.save(autor);
     }
 
+    @Transactional
+    public void atualizar (Autor autor){
+        if(autor.getId() == null){
+            throw new RuntimeException("O Autor já precisa estar salvo");
+        }
+        repository.save(autor);
+    }
+
     @Transactional(readOnly = true)
     public Optional<Autor> obterPorId(UUID id){
         return repository.findById(id);

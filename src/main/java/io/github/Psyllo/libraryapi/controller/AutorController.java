@@ -3,6 +3,7 @@ package io.github.Psyllo.libraryapi.controller;
 import io.github.Psyllo.libraryapi.controller.dto.AutorRequestDTO;
 import io.github.Psyllo.libraryapi.controller.dto.AutorResponseDTO;
 import io.github.Psyllo.libraryapi.model.Autor;
+import io.github.Psyllo.libraryapi.repository.AutorRepository;
 import io.github.Psyllo.libraryapi.service.AutorService;
 import lombok.Getter;
 import org.springframework.http.ResponseEntity;
@@ -81,5 +82,25 @@ public class AutorController{
         ).collect(Collectors.toList());
 
         return ResponseEntity.ok(lista);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> atualizarAutor(@PathVariable("id") String id,
+        @RequestBody AutorRequestDTO dto){
+        var idAutor = UUID.fromString(id);
+        Optional<Autor> autorOptional = service.obterPorId(idAutor);
+
+        if(autorOptional.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        var autor = autorOptional.get();
+        autor.setNome(dto.nome());
+        autor.setDataNascimento(dto.dataNascimento());
+        autor.setNacionalidade(dto.nacionalidade());
+
+        service.atualizar(autor);
+
+        return ResponseEntity.noContent().build();
     }
 }
