@@ -34,7 +34,6 @@ public class AutorService {
             throw new RuntimeException("O Autor já precisa estar salvo");
         }
         validator.validar(autor);
-        repository.save(autor);
     }
 
     @Transactional(readOnly = true)

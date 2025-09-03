@@ -23,16 +23,20 @@ public class AutorValidator {
         }
     }
 
-    private boolean existeAutorCadastrado(Autor autor){
-        Optional<Autor> autorEncontrado = repository.findByNomeAndDataNascimentoAndNacionalidade(
-                autor.getNome(),
-                autor.getDataNascimento(),
-                autor.getNacionalidade());
-
-        if(autor.getId() == null){
-            return autorEncontrado.isPresent();
+    private boolean existeAutorCadastrado(Autor autor) {
+        var nome = autor.getNome();
+        var data = autor.getDataNascimento();
+        var nac  = autor.getNacionalidade();
+        if (nome == null || data == null || nac == null) {
+            return false;
         }
 
-        return !autor.getId().equals(autorEncontrado.get().getId()) && autorEncontrado.isPresent();
+        // POST: sem id -> existe alguém com os mesmos dados ?
+        if (autor.getId() == null) {
+            return repository.existsByNomeAndDataNascimentoAndNacionalidade(nome, data, nac);
+        }
+
+        // PUT: com id -> existe ALGUM OUTRO registro com os mesmos dados?
+        return repository.existsByNomeAndDataNascimentoAndNacionalidadeAndIdNot(nome, data, nac, autor.getId());
     }
 }
