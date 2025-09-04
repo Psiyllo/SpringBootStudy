@@ -1,7 +1,9 @@
 package io.github.Psyllo.libraryapi.service;
 
+import io.github.Psyllo.libraryapi.Exception.OperacaoNaoPermitidaException;
 import io.github.Psyllo.libraryapi.model.Autor;
 import io.github.Psyllo.libraryapi.repository.AutorRepository;
+import io.github.Psyllo.libraryapi.repository.LivroRepository;
 import io.github.Psyllo.libraryapi.validator.AutorValidator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,19 +15,22 @@ import java.util.UUID;
 @Service
 public class AutorService {
 
-    private final AutorRepository repository;
+    private final AutorRepository autorRepository;
 
     private final AutorValidator validator;
 
-    public AutorService(AutorRepository repository, AutorValidator validator) {
-        this.repository = repository;
+    private final LivroRepository livroRepository;
+
+    public AutorService(AutorRepository autorRepository, AutorValidator validator, LivroRepository livroRepository) {
+        this.autorRepository = autorRepository;
         this.validator = validator;
+        this.livroRepository = livroRepository;
     }
 
     @Transactional
     public Autor salvar (Autor autor){
         validator.validar(autor);
-        return repository.save(autor);
+        return autorRepository.save(autor);
     }
 
     @Transactional
@@ -38,25 +43,31 @@ public class AutorService {
 
     @Transactional(readOnly = true)
     public Optional<Autor> obterPorId(UUID id){
-        return repository.findById(id);
+        return autorRepository.findById(id);
     }
 
     @Transactional
     public void deletar(Autor autor){
-        repository.delete(autor);
+        if(autorComLivro(autor)){
+            throw new OperacaoNaoPermitidaException("O Autor Não Pode Ser Excluido Pois Possui um Livro Cadastrado");
+        }
+        autorRepository.delete(autor);
     }
 
     @Transactional(readOnly = true)
     public List<Autor> filtrarAutor (String nome, String nacionalidade){
         if(nome != null && nacionalidade != null){
-            return repository.findByNomeAndNacionalidade(nome, nacionalidade);
+            return autorRepository.findByNomeAndNacionalidade(nome, nacionalidade);
         }
         if(nome != null){
-            return repository.findByNome(nome);
+            return autorRepository.findByNome(nome);
         }
         if(nacionalidade != null){
-            return repository.findByNacionalidade(nacionalidade);
+            return autorRepository.findByNacionalidade(nacionalidade);
         }
-        return repository.findAll();
+        return autorRepository.findAll();
+    }
+    public boolean autorComLivro(Autor autor){
+        return livroRepository.existsByAutor(autor);
     }
 }
