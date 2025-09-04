@@ -8,6 +8,7 @@ import io.github.Psyllo.libraryapi.controller.dto.ErroResposta;
 import io.github.Psyllo.libraryapi.model.Autor;
 import io.github.Psyllo.libraryapi.repository.AutorRepository;
 import io.github.Psyllo.libraryapi.service.AutorService;
+import jakarta.validation.Valid;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public class AutorController{
     private final AutorService service;
 
     @PostMapping
-    public ResponseEntity<Object> salvar(@RequestBody AutorRequestDTO autor){
+    public ResponseEntity<Object> salvar(@RequestBody @Valid AutorRequestDTO autor){
         try {
             Autor autorEntidade = autor.mapearParaAutor();
             service.salvar(autorEntidade);
