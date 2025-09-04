@@ -1,5 +1,6 @@
 package io.github.Psyllo.libraryapi.controller;
 
+import io.github.Psyllo.libraryapi.Exception.OperacaoNaoPermitidaException;
 import io.github.Psyllo.libraryapi.Exception.RegistroDuplicadoException;
 import io.github.Psyllo.libraryapi.controller.dto.AutorRequestDTO;
 import io.github.Psyllo.libraryapi.controller.dto.AutorResponseDTO;
@@ -64,15 +65,21 @@ public class AutorController{
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deletarAutor(@PathVariable("id") String id){
-        var idAutor = UUID.fromString(id);
-        Optional<Autor> autorOptional = service.obterPorId(idAutor);
+    public ResponseEntity<Object> deletarAutor(@PathVariable("id") String id){
+        try {
+            var idAutor = UUID.fromString(id);
+            Optional<Autor> autorOptional = service.obterPorId(idAutor);
 
-        if(autorOptional.isEmpty()){
-            return ResponseEntity.notFound().build();
+            if (autorOptional.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
+            service.deletar(autorOptional.get());
+            return ResponseEntity.noContent().build();
+        }catch (OperacaoNaoPermitidaException e){
+            var erroResposta = ErroResposta.respostaPadrao(e.getMessage());
+            return ResponseEntity.status(erroResposta.status()).body(erroResposta);
+
         }
-        service.deletar(autorOptional.get());
-        return ResponseEntity.noContent().build();
     }
 
     @GetMapping
