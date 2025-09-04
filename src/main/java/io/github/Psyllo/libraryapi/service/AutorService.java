@@ -5,6 +5,7 @@ import io.github.Psyllo.libraryapi.model.Autor;
 import io.github.Psyllo.libraryapi.repository.AutorRepository;
 import io.github.Psyllo.libraryapi.repository.LivroRepository;
 import io.github.Psyllo.libraryapi.validator.AutorValidator;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 public class AutorService {
 
     private final AutorRepository autorRepository;
@@ -20,12 +22,6 @@ public class AutorService {
     private final AutorValidator validator;
 
     private final LivroRepository livroRepository;
-
-    public AutorService(AutorRepository autorRepository, AutorValidator validator, LivroRepository livroRepository) {
-        this.autorRepository = autorRepository;
-        this.validator = validator;
-        this.livroRepository = livroRepository;
-    }
 
     @Transactional
     public Autor salvar (Autor autor){

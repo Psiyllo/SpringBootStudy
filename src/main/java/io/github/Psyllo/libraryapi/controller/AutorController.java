@@ -9,6 +9,7 @@ import io.github.Psyllo.libraryapi.model.Autor;
 import io.github.Psyllo.libraryapi.repository.AutorRepository;
 import io.github.Psyllo.libraryapi.service.AutorService;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -21,14 +22,11 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("autores")
+@RequiredArgsConstructor
 //http://localhost:8080/autores
 public class AutorController{
 
     private final AutorService service;
-
-    public AutorController(AutorService service){
-        this.service = service;
-    }
 
     @PostMapping
     public ResponseEntity<Object> salvar(@RequestBody AutorRequestDTO autor){
