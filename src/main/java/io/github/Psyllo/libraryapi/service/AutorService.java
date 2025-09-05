@@ -23,11 +23,13 @@ public class AutorService {
 
     private final LivroRepository livroRepository;
 
+    @Transactional
     public Autor salvar (Autor autor){
         validator.validar(autor);
         return autorRepository.save(autor);
     }
 
+    @Transactional
     public void atualizar (Autor autor){
         if(autor.getId() == null){
             throw new RuntimeException("O Autor já precisa estar salvo");
@@ -35,10 +37,12 @@ public class AutorService {
         validator.validar(autor);
     }
 
+    @Transactional(readOnly = true)
     public Optional<Autor> obterPorId(UUID id){
         return autorRepository.findById(id);
     }
 
+    @Transactional
     public void deletar(Autor autor){
         if(autorComLivro(autor)){
             throw new OperacaoNaoPermitidaException("O Autor Não Pode Ser Excluido Pois Possui um Livro Cadastrado");
@@ -46,6 +50,7 @@ public class AutorService {
         autorRepository.delete(autor);
     }
 
+    @Transactional(readOnly = true)
     public List<Autor> filtrarAutor (String nome, String nacionalidade){
         if(nome != null && nacionalidade != null){
             return autorRepository.findByNomeAndNacionalidade(nome, nacionalidade);
