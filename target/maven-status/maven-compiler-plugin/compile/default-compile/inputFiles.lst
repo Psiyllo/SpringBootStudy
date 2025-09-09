@@ -6,6 +6,7 @@ C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyl
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\validator\AutorValidator.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\OperacaoNaoPermitidaException.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Autor.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\common\GlobalExceptionHandler.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\AutorService.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\LibraryapiApplication.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\AutorRepository.java

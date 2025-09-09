@@ -11,6 +11,7 @@ io\github\Psyllo\libraryapi\validator\AutorValidator.class
 io\github\Psyllo\libraryapi\controller\dto\ErroResposta.class
 io\github\Psyllo\libraryapi\service\AutorService.class
 io\github\Psyllo\libraryapi\service\TransacaoService.class
+io\github\Psyllo\libraryapi\controller\common\GlobalExceptionHandler.class
 io\github\Psyllo\libraryapi\model\GeneroLivro.class
 io\github\Psyllo\libraryapi\Exception\RegistroDuplicadoException.class
 io\github\Psyllo\libraryapi\repository\LivroRepository.class
