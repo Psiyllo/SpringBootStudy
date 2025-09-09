@@ -6,6 +6,8 @@ import io.github.Psyllo.libraryapi.repository.AutorRepository;
 import io.github.Psyllo.libraryapi.repository.LivroRepository;
 import io.github.Psyllo.libraryapi.validator.AutorValidator;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -50,18 +52,33 @@ public class AutorService {
         autorRepository.delete(autor);
     }
 
-    @Transactional(readOnly = true)
-    public List<Autor> filtrarAutor (String nome, String nacionalidade){
-        if(nome != null && nacionalidade != null){
-            return autorRepository.findByNomeAndNacionalidade(nome, nacionalidade);
-        }
-        if(nome != null){
-            return autorRepository.findByNome(nome);
-        }
-        if(nacionalidade != null){
-            return autorRepository.findByNacionalidade(nacionalidade);
-        }
-        return autorRepository.findAll();
+//    @Transactional(readOnly = true)
+//    public List<Autor> filtrarAutor (String nome, String nacionalidade){
+//        if(nome != null && nacionalidade != null){
+//            return autorRepository.findByNomeAndNacionalidade(nome, nacionalidade);
+//        }
+//        if(nome != null){
+//            return autorRepository.findByNome(nome);
+//        }
+//        if(nacionalidade != null){
+//            return autorRepository.findByNacionalidade(nacionalidade);
+//        }
+//        return autorRepository.findAll();
+//    }
+
+    @Transactional
+    public List<Autor> filtrarAutorByExample(String nome, String nacionalidade){
+        var autor = new Autor();
+        autor.setNome(nome);
+        autor.setNacionalidade(nacionalidade);
+
+        ExampleMatcher matcher = ExampleMatcher
+                .matching()
+                .withIgnoreNullValues()
+                .withIgnoreCase()
+                .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
+        Example<Autor> autorExample = Example.of(autor, matcher);
+        return autorRepository.findAll(autorExample);
     }
     public boolean autorComLivro(Autor autor){
         return livroRepository.existsByAutor(autor);
