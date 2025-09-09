@@ -34,7 +34,7 @@ class LivroRepositoryTest {
         livro.setDataPublicacao(LocalDate.of(2022, 4, 5));
 
         Autor autor = autorRepository
-                .findById(UUID.fromString("612668f2-0577-4202-a902-cab7775338ca"))
+                .findById(UUID.fromString("96003baf-cdab-4f52-8eff-27cd98198c9f"))
                 .orElse(null);
 
         livro.setAutor(autor);
@@ -45,16 +45,16 @@ class LivroRepositoryTest {
     @Test
     void salvarAutorELivroTest() {
         Livro livro = new Livro();
-        livro.setIsbn("901212-23213");
+        livro.setIsbn("543212-27913");
         livro.setPreco(BigDecimal.valueOf(200));
-        livro.setTitulo("Cientifica top");
-        livro.setGenero(GeneroLivro.CIENCIA);
+        livro.setTitulo("Pirineu dondon");
+        livro.setGenero(GeneroLivro.BIOGRAFIA);
         livro.setDataPublicacao(LocalDate.of(2013, 8, 28));
 
         Autor autor = new Autor();
-        autor.setNome("rafael");
-        autor.setNacionalidade("Brasileiro");
-        autor.setDataNascimento(LocalDate.of(2001, 6, 14));
+        autor.setNome("Gilsomar Gomes Pirineu Dondon");
+        autor.setNacionalidade("Brasileira");
+        autor.setDataNascimento(LocalDate.of(1970, 9, 21));
 
         autorRepository.save(autor);
 

@@ -82,4 +82,6 @@ public interface LivroRepository extends JpaRepository<Livro, UUID> {
     @Transactional
     @Query(" update Livro set genero = ?1 where id= ?2")
     void updateByGenero(GeneroLivro generoLivro, UUID id);
+
+    boolean existsByAutor(Autor autor);
 }
