@@ -2,6 +2,7 @@ C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyl
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\ResultadoPesquisaLivroDTO.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Livro.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\LivroService.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\mappers\AutorMapper.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\AutorResponseDTO.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\ErroCampo.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\LivroController.java
