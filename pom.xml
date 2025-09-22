@@ -20,6 +20,7 @@
 		<java.version>21</java.version>
 		<!-- garante que o javac usa o release 21 -->
 		<maven.compiler.release>21</maven.compiler.release>
+		<mapstruct.version>1.6.0</mapstruct.version>
 	</properties>
 
 	<dependencies>
@@ -58,22 +59,35 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${mapstruct.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
-			<!-- IMPORTANTE: plugin do compilador com o annotation processor do Lombok -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version>
 				<configuration>
-					<release>${maven.compiler.release}</release>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<!-- ou <release>${maven.compiler.release}</release> -->
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 							<version>1.18.38</version>
+						</path>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${mapstruct.version}</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
