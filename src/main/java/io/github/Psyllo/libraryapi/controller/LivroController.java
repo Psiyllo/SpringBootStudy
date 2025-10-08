@@ -3,6 +3,8 @@ package io.github.Psyllo.libraryapi.controller;
 import io.github.Psyllo.libraryapi.Exception.RegistroDuplicadoException;
 import io.github.Psyllo.libraryapi.controller.dto.CadastroLivroDTO;
 import io.github.Psyllo.libraryapi.controller.dto.ErroResposta;
+import io.github.Psyllo.libraryapi.controller.mappers.LivroMapper;
+import io.github.Psyllo.libraryapi.model.Livro;
 import io.github.Psyllo.libraryapi.service.LivroService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -17,13 +19,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("livros")
 public class LivroController {
 
-    private final LivroService livroService;
+    private final LivroService service;
+    private final LivroMapper mapper;
 
     @PostMapping
     public ResponseEntity<Object> salvar(@RequestBody @Valid CadastroLivroDTO dto){
         try{
+            Livro livro = mapper.toEntity(dto);
+            service.salvar(livro);
 
-            return ResponseEntity.ok(dto);
+
+            return ResponseEntity.ok(livro);
         } catch (RegistroDuplicadoException e){
             var erroDTO = ErroResposta.conflito(e.getMessage());
             return ResponseEntity.status(erroDTO.status()).body(erroDTO);

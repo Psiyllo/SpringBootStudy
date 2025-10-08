@@ -18,6 +18,7 @@ C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyl
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\CadastroLivroDTO.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\DatabaseConfiguration.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\AutorController.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\mappers\LivroMapper.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\RegistroDuplicadoException.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\AutorRequestDTO.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\TransacaoService.java
