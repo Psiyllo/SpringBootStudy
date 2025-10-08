@@ -34,7 +34,7 @@ public class AutorService {
     @Transactional
     public void atualizar (Autor autor){
         if(autor.getId() == null){
-            throw new RuntimeException("O Autor já precisa estar salvo");
+            throw new IllegalArgumentException("O Autor já precisa estar salvo");
         }
         validator.validar(autor);
     }
