@@ -5,6 +5,7 @@ import io.github.Psyllo.libraryapi.model.GeneroLivro;
 import io.github.Psyllo.libraryapi.model.Livro;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cglib.core.Local;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootTest
@@ -23,6 +25,8 @@ class LivroRepositoryTest {
 
     @Autowired
     AutorRepository autorRepository;
+    @Autowired
+    private DataSourceTransactionManagerAutoConfiguration dataSourceTransactionManagerAutoConfiguration;
 
     @Test
     void salvarTest() {
@@ -139,8 +143,8 @@ class LivroRepositoryTest {
 
     @Test
     void listarLivrosIsbn() {
-        List<Livro> listaIsbn = livroRepository.findByIsbn("415342-93243");
-        listaIsbn.forEach(System.out::println);
+        Optional<Livro> livro = livroRepository.findByIsbn("415342-93243");
+        livro.ifPresent(System.out::println);
     }
 
     @Test

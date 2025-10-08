@@ -4,6 +4,7 @@ import io.github.Psyllo.libraryapi.model.GeneroLivro;
 import io.github.Psyllo.libraryapi.model.Livro;
 import io.github.Psyllo.libraryapi.repository.LivroRepository;
 import io.github.Psyllo.libraryapi.repository.specs.LivroSpecs;
+import io.github.Psyllo.libraryapi.validator.LivroValidator;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
@@ -21,9 +22,17 @@ import static io.github.Psyllo.libraryapi.repository.specs.LivroSpecs.*;
 public class LivroService {
 
     private final LivroRepository repository;
+    private final LivroValidator validator;
+
+    private String normalizarIsbn(String isbn) {
+        if (isbn == null) return null;
+        return isbn.replaceAll("\\D", "");
+    }
 
     @Transactional
     public Livro salvar(Livro livro) {
+        livro.setIsbn(normalizarIsbn(livro.getIsbn()));
+        validator.validar(livro);
         return repository.save(livro);
     }
 
@@ -71,11 +80,14 @@ public class LivroService {
         return repository.findAll(specs);
     }
 
-    @Transactional
     public void atualizar(Livro livro){
+
         if(livro == null){
             throw new RuntimeException("O Livro já precisa estar salvo");
         }
+
+        livro.setIsbn(normalizarIsbn(livro.getIsbn()));
+        validator.validar(livro);
         repository.save(livro);
     }
 }
