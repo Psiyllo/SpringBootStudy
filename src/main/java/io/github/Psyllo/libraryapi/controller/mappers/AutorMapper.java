@@ -14,5 +14,4 @@ public interface AutorMapper {
     Autor toEntity (AutorRequestDTO dto);
 
     AutorResponseDTO toDTO(Autor autor);
-
 }

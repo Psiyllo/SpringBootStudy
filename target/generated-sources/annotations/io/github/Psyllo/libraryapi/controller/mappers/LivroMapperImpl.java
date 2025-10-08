@@ -1,8 +1,8 @@
 package io.github.Psyllo.libraryapi.controller.mappers;
 
 import io.github.Psyllo.libraryapi.controller.dto.AutorResponseDTO;
-import io.github.Psyllo.libraryapi.controller.dto.CadastroLivroDTO;
-import io.github.Psyllo.libraryapi.controller.dto.ResultadoPesquisaLivroDTO;
+import io.github.Psyllo.libraryapi.controller.dto.LivroRequestDTO;
+import io.github.Psyllo.libraryapi.controller.dto.LivroResponseDTO;
 import io.github.Psyllo.libraryapi.model.GeneroLivro;
 import io.github.Psyllo.libraryapi.model.Livro;
 import java.math.BigDecimal;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-10-08T13:03:44-0300",
+    date = "2025-10-08T13:43:16-0300",
     comments = "version: 1.6.0, compiler: javac, environment: Java 22 (Oracle Corporation)"
 )
 @Component
@@ -24,7 +24,7 @@ public class LivroMapperImpl extends LivroMapper {
     private AutorMapper autorMapper;
 
     @Override
-    public Livro toEntity(CadastroLivroDTO dto) {
+    public Livro toEntity(LivroRequestDTO dto) {
         if ( dto == null ) {
             return null;
         }
@@ -43,7 +43,7 @@ public class LivroMapperImpl extends LivroMapper {
     }
 
     @Override
-    public ResultadoPesquisaLivroDTO toDTO(Livro livro) {
+    public LivroResponseDTO toDTO(Livro livro) {
         if ( livro == null ) {
             return null;
         }
@@ -64,8 +64,8 @@ public class LivroMapperImpl extends LivroMapper {
         preco = livro.getPreco();
         autor = autorMapper.toDTO( livro.getAutor() );
 
-        ResultadoPesquisaLivroDTO resultadoPesquisaLivroDTO = new ResultadoPesquisaLivroDTO( id, isbn, titulo, dataPublicacao, genero, preco, autor );
+        LivroResponseDTO livroResponseDTO = new LivroResponseDTO( id, isbn, titulo, dataPublicacao, genero, preco, autor );
 
-        return resultadoPesquisaLivroDTO;
+        return livroResponseDTO;
     }
 }
