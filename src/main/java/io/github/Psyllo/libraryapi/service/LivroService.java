@@ -34,7 +34,7 @@ public class LivroService {
     }
 
     //isbn, titulo, nome autor, genero, ano publicacao
-    public List<Livro> pesquisa(String isbn, String titulo, String nomeAtor, GeneroLivro genero, Integer anoPublicacao){
+    public List<Livro> pesquisa(String isbn, String titulo, String nomeAutor, GeneroLivro genero, Integer anoPublicacao){
 
 //        Specification<Livro> specs = Specification
 //                .where(LivroSpecs.isbnEqual(isbn))
@@ -57,6 +57,10 @@ public class LivroService {
 
         if(anoPublicacao != null){
             specs = specs.and(anoPublicacaoEqual(anoPublicacao));
+        }
+
+        if(nomeAutor != null){
+            specs = specs.and(nomeAutorLike(nomeAutor));
         }
 
         return repository.findAll(specs);
