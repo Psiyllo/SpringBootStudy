@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public record CadastroLivroDTO(
+public record LivroRequestDTO(
         @ISBN
         @NotBlank(message = "Campo Obrigatório")
         String isbn,

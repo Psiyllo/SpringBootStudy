@@ -1,14 +1,13 @@
 package io.github.Psyllo.libraryapi.controller;
 
-import io.github.Psyllo.libraryapi.Exception.RegistroDuplicadoException;
-import io.github.Psyllo.libraryapi.controller.dto.CadastroLivroDTO;
-import io.github.Psyllo.libraryapi.controller.dto.ErroResposta;
-import io.github.Psyllo.libraryapi.controller.dto.ResultadoPesquisaLivroDTO;
+import io.github.Psyllo.libraryapi.controller.dto.LivroRequestDTO;
+import io.github.Psyllo.libraryapi.controller.dto.LivroResponseDTO;
 import io.github.Psyllo.libraryapi.controller.mappers.LivroMapper;
 import io.github.Psyllo.libraryapi.model.Livro;
 import io.github.Psyllo.libraryapi.service.LivroService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.spi.ObjectThreadContextMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,7 @@ public class LivroController implements GenericController {
     private final LivroMapper mapper;
 
     @PostMapping
-    public ResponseEntity<Void> salvar(@RequestBody @Valid CadastroLivroDTO dto) {
+    public ResponseEntity<Void> salvar(@RequestBody @Valid LivroRequestDTO dto) {
         Livro livro = mapper.toEntity(dto);
         service.salvar(livro);
         var url = gerarHeaderLocation(livro.getId());
@@ -32,12 +31,21 @@ public class LivroController implements GenericController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<ResultadoPesquisaLivroDTO> obterDetalhes(
+    public ResponseEntity<LivroResponseDTO> obterDetalhes(
             @PathVariable("id") String id){
         return service.obterPorId(UUID.fromString(id))
                 .map(livro -> {
                     var dto = mapper.toDTO(livro);
                     return ResponseEntity.ok(dto);
                 }).orElseGet( () -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Object> deletarLivro(@PathVariable("id") String id){
+        return service.obterPorId(UUID.fromString(id))
+                .map(livro -> {
+                    service.deletar(livro);
+                    return ResponseEntity.noContent().build();
+                }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
