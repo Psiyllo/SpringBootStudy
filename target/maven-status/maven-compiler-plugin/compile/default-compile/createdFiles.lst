@@ -1,3 +1,4 @@
+io\github\Psyllo\libraryapi\config\WebConfiguration.class
 io\github\Psyllo\libraryapi\config\DatabaseConfiguration.class
 io\github\Psyllo\libraryapi\controller\dto\AutorResponseDTO.class
 io\github\Psyllo\libraryapi\controller\dto\AutorRequestDTO.class
@@ -16,6 +17,7 @@ io\github\Psyllo\libraryapi\controller\dto\LivroResponseDTO.class
 io\github\Psyllo\libraryapi\repository\LivroRepository.class
 io\github\Psyllo\libraryapi\service\LivroService.class
 io\github\Psyllo\libraryapi\repository\AutorRepository.class
+io\github\Psyllo\libraryapi\controller\LoginViewController.class
 io\github\Psyllo\libraryapi\Exception\OperacaoNaoPermitidaException.class
 io\github\Psyllo\libraryapi\model\Autor.class
 io\github\Psyllo\libraryapi\LibraryapiApplication.class
@@ -28,4 +30,5 @@ io\github\Psyllo\libraryapi\Exception\RegistroDuplicadoException.class
 io\github\Psyllo\libraryapi\controller\GenericController.class
 io\github\Psyllo\libraryapi\repository\LivroRepository$LivroTituloPreco.class
 io\github\Psyllo\libraryapi\validator\LivroValidator.class
+io\github\Psyllo\libraryapi\config\SecurityConfiguration.class
 io\github\Psyllo\libraryapi\Exception\CampoInvalidoException.class
