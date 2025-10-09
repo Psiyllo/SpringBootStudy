@@ -1,5 +1,7 @@
 package io.github.Psyllo.libraryapi.config;
 
+import io.github.Psyllo.libraryapi.Security.CustomUserDetailsService;
+import io.github.Psyllo.libraryapi.service.UsuarioService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -47,26 +49,28 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder encoder) {
+    public UserDetailsService userDetailsService(UsuarioService usuarioService) {
 
-        UserDetails user1 = User.builder()
-                .username("F")
-                .password(encoder.encode("opa"))
-                .roles("USER")
-                .build();
+//        UserDetails user1 = User.builder()
+//                .username("F")
+//                .password(encoder.encode("opa"))
+//                .roles("USER")
+//                .build();
+//
+//        UserDetails user2 = User.builder()
+//                .username("FF")
+//                .password(encoder.encode("opaa"))
+//                .roles("USER")
+//                .build();
+//
+//        UserDetails user3 = User.builder()
+//                .username("FFF")
+//                .password(encoder.encode("opaaa"))
+//                .roles("ADMIN")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(user1, user2, user3);
 
-        UserDetails user2 = User.builder()
-                .username("FF")
-                .password(encoder.encode("opaa"))
-                .roles("USER")
-                .build();
-
-        UserDetails user3 = User.builder()
-                .username("FFF")
-                .password(encoder.encode("opaaa"))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(user1, user2, user3);
+        return new CustomUserDetailsService(usuarioService);
     }
 }
