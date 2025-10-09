@@ -1,7 +1,9 @@
 package io.github.Psyllo.libraryapi.service;
 
+import io.github.Psyllo.libraryapi.Security.SecurityService;
 import io.github.Psyllo.libraryapi.model.GeneroLivro;
 import io.github.Psyllo.libraryapi.model.Livro;
+import io.github.Psyllo.libraryapi.model.Usuario;
 import io.github.Psyllo.libraryapi.repository.LivroRepository;
 import io.github.Psyllo.libraryapi.repository.specs.LivroSpecs;
 import io.github.Psyllo.libraryapi.validator.LivroValidator;
@@ -26,6 +28,7 @@ public class LivroService {
 
     private final LivroRepository repository;
     private final LivroValidator validator;
+    private final SecurityService securityService;
 
     private String normalizarIsbn(String isbn) {
         if (isbn == null) return null;
@@ -36,6 +39,8 @@ public class LivroService {
     public Livro salvar(Livro livro) {
         livro.setIsbn(normalizarIsbn(livro.getIsbn()));
         validator.validar(livro);
+        Usuario usuario = securityService.obterUsuarioLogado();
+        livro.setUsuario(usuario);
         return repository.save(livro);
     }
 
