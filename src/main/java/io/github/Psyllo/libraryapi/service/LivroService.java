@@ -7,6 +7,9 @@ import io.github.Psyllo.libraryapi.repository.specs.LivroSpecs;
 import io.github.Psyllo.libraryapi.validator.LivroValidator;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +51,9 @@ public class LivroService {
 
     @Transactional
     //isbn, titulo, nome autor, genero, ano publicacao
-    public List<Livro> pesquisa(String isbn, String titulo, String nomeAutor, GeneroLivro genero, Integer anoPublicacao){
+    public Page<Livro> pesquisa(
+            String isbn, String titulo, String nomeAutor,
+            GeneroLivro genero, Integer anoPublicacao, Integer pagina, Integer tamanhoPagina){
 
 //        Specification<Livro> specs = Specification
 //                .where(LivroSpecs.isbnEqual(isbn))
@@ -77,7 +82,9 @@ public class LivroService {
             specs = specs.and(nomeAutorLike(nomeAutor));
         }
 
-        return repository.findAll(specs);
+        Pageable pagerequest = PageRequest.of(pagina, tamanhoPagina);
+
+        return repository.findAll(specs, pagerequest);
     }
 
     public void atualizar(Livro livro){
