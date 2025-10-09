@@ -1,7 +1,9 @@
 package io.github.Psyllo.libraryapi.service;
 
 import io.github.Psyllo.libraryapi.Exception.OperacaoNaoPermitidaException;
+import io.github.Psyllo.libraryapi.Security.SecurityService;
 import io.github.Psyllo.libraryapi.model.Autor;
+import io.github.Psyllo.libraryapi.model.Usuario;
 import io.github.Psyllo.libraryapi.repository.AutorRepository;
 import io.github.Psyllo.libraryapi.repository.LivroRepository;
 import io.github.Psyllo.libraryapi.validator.AutorValidator;
@@ -20,14 +22,15 @@ import java.util.UUID;
 public class AutorService {
 
     private final AutorRepository autorRepository;
-
     private final AutorValidator validator;
-
     private final LivroRepository livroRepository;
+    private final SecurityService securityService;
 
     @Transactional
     public Autor salvar (Autor autor){
         validator.validar(autor);
+        Usuario usuario = securityService.obterUsuarioLogado();
+        autor.setUsuario(usuario);
         return autorRepository.save(autor);
     }
 
