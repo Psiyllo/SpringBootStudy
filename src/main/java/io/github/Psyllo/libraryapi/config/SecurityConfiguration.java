@@ -1,6 +1,7 @@
 package io.github.Psyllo.libraryapi.config;
 
 import io.github.Psyllo.libraryapi.Security.CustomUserDetailsService;
+import io.github.Psyllo.libraryapi.Security.LoginSocialSucessHandler;
 import io.github.Psyllo.libraryapi.service.UsuarioService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +27,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfiguration {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, LoginSocialSucessHandler sucessHandler) throws Exception {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
 //                .formLogin(configurer -> {
@@ -40,7 +41,9 @@ public class SecurityConfiguration {
 
                     authorize.anyRequest().authenticated();
                 })
-                .oauth2Login(Customizer.withDefaults())
+                .oauth2Login(oauth2 -> {
+                    oauth2.successHandler(sucessHandler);
+                })
                 .build();
     }
 
