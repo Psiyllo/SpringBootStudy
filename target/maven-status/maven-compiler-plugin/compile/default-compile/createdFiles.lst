@@ -24,12 +24,14 @@ io\github\Psyllo\libraryapi\service\LivroService.class
 io\github\Psyllo\libraryapi\Security\SecurityService.class
 io\github\Psyllo\libraryapi\model\Usuario.class
 io\github\Psyllo\libraryapi\repository\AutorRepository.class
+io\github\Psyllo\libraryapi\Security\CustomAuthenticationProvider.class
 io\github\Psyllo\libraryapi\controller\LoginViewController.class
 io\github\Psyllo\libraryapi\Exception\OperacaoNaoPermitidaException.class
 io\github\Psyllo\libraryapi\controller\mappers\UsuarioMapperImpl.class
 io\github\Psyllo\libraryapi\controller\UsuarioController.class
 io\github\Psyllo\libraryapi\model\Autor.class
 io\github\Psyllo\libraryapi\service\UsuarioService.class
+io\github\Psyllo\libraryapi\Security\CustomAuthentication.class
 io\github\Psyllo\libraryapi\LibraryapiApplication.class
 io\github\Psyllo\libraryapi\controller\AutorController.class
 io\github\Psyllo\libraryapi\validator\AutorValidator.class

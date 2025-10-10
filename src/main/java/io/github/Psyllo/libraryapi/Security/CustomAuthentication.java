@@ -1,6 +1,7 @@
 package io.github.Psyllo.libraryapi.Security;
 
 import io.github.Psyllo.libraryapi.model.Usuario;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,6 +11,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
+@Getter
 public class CustomAuthentication implements Authentication {
 
     private final Usuario usuario;

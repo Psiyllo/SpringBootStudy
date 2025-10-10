@@ -24,6 +24,7 @@ C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyl
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Security\SecurityService.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\LivroRequestDTO.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\specs\LivroSpecs.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Security\CustomAuthenticationProvider.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\WebConfiguration.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\GeneroLivro.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\UsuarioRepository.java
@@ -37,4 +38,5 @@ C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyl
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\RegistroDuplicadoException.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\AutorRequestDTO.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\UsuarioResponseDTO.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Security\CustomAuthentication.java
 C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\TransacaoService.java
