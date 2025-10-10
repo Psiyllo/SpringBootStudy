@@ -28,16 +28,18 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-                .formLogin(configurer -> {
-                    configurer.loginPage("/login");
-                })
+//                .formLogin(configurer -> {
+//                    configurer.loginPage("/login");
+//                })
+                .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(authorize -> {
                     authorize.requestMatchers("/login").permitAll();
-                    authorize.requestMatchers(HttpMethod.POST,"/usuarios/**").permitAll();
+                    authorize.requestMatchers(HttpMethod.POST, "/usuarios/**").permitAll();
 
                     authorize.anyRequest().authenticated();
                 })
+                .oauth2Login(Customizer.withDefaults())
                 .build();
     }
 
