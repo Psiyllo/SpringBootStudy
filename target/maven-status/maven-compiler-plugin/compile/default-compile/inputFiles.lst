@@ -1,40 +1,40 @@
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\AutorResponseDTO.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\UsuarioRequestDTO.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\UsuarioResponseDTO.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\GenericController.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\AutorRequestDTO.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\UsuarioController.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\SecurityConfiguration.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Security\CustomUserDetailsService.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\LivroRepository.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\LibraryapiApplication.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\LivroService.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\AutorController.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\mappers\UsuarioMapper.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\RegistroDuplicadoException.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\UsuarioService.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\validator\AutorValidator.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\AutorService.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\GeneroLivro.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\specs\LivroSpecs.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\TransacaoService.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\CampoInvalidoException.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\ErroResposta.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\mappers\LivroMapper.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\LoginViewController.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\LivroResponseDTO.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Usuario.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\DatabaseConfiguration.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\OperacaoNaoPermitidaException.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Autor.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\common\GlobalExceptionHandler.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\LivroRequestDTO.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\mappers\AutorMapper.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\AutorRepository.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\validator\LivroValidator.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\ErroCampo.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\UsuarioRepository.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Security\SecurityService.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\LivroController.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\WebConfiguration.java
-C:\Users\Pask\Desktop\Projetos\SpringbootStudy - github\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Livro.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\ErroResposta.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\mappers\UsuarioMapper.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\GenericController.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\SecurityConfiguration.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\UsuarioController.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\LivroService.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\LivroResponseDTO.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\UsuarioService.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\mappers\AutorMapper.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\validator\LivroValidator.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\AutorResponseDTO.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\ErroCampo.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\LivroController.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\validator\AutorValidator.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Autor.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\common\GlobalExceptionHandler.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\LibraryapiApplication.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\AutorRepository.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\LivroRepository.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\DatabaseConfiguration.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\mappers\LivroMapper.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Usuario.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\Livro.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Security\SecurityService.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\LivroRequestDTO.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\specs\LivroSpecs.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\config\WebConfiguration.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\model\GeneroLivro.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\repository\UsuarioRepository.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Security\CustomUserDetailsService.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\OperacaoNaoPermitidaException.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\AutorService.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\AutorController.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\LoginViewController.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\UsuarioRequestDTO.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\CampoInvalidoException.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\Exception\RegistroDuplicadoException.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\AutorRequestDTO.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\controller\dto\UsuarioResponseDTO.java
+C:\Users\08316834146\Desktop\Estudo\SpringBootStudy\src\main\java\io\github\Psyllo\libraryapi\service\TransacaoService.java

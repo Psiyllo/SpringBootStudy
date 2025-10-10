@@ -11,6 +11,14 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 99273189271-8iegjht6num8pqdunkv7oqsurmtdcnvh.apps.googleusercontent.com
+            client-secret: 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
+
 #  A nível de estudo é interessante a utilização do ddl-auto, pois ele cria as tabelas sozinho sem a necessidade de scripts SQL
 #  jpa:
 #    show-sql: true
