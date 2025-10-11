@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -23,5 +24,8 @@ public class Autor {
     private LocalDate dataNascimento;
 
     @Column(name = "nacionalidade")
-    private String Nacionalidade;
+    private String nacionalidade;
+
+    @OneToMany
+    private List<Livro> livros;
 }
