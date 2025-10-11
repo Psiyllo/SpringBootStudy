@@ -1,4 +1,4 @@
-package com.example.review_libraryapi;
+package io.github.Psyllo.reviewLibraryapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
