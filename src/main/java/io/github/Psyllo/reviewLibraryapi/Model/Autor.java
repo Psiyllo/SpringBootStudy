@@ -3,6 +3,7 @@ package io.github.Psyllo.reviewLibraryapi.Model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -19,7 +20,7 @@ public class Autor {
     private String nome;
 
     @Column(name = "data_nascimento")
-    private String dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(name = "nacionalidade")
     private String Nacionalidade;
