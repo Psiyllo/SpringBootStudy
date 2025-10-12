@@ -1,4 +1,4 @@
-package com.example.review_libraryapi;
+package io.github.Psyllo.reviewLibraryapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
