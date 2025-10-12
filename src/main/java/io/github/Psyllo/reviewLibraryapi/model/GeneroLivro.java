@@ -1,4 +1,4 @@
-package io.github.Psyllo.reviewLibraryapi.Model;
+package io.github.Psyllo.reviewLibraryapi.model;
 
 public enum GeneroLivro {
     FICCAO,

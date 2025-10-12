@@ -1,4 +1,4 @@
-package io.github.Psyllo.reviewLibraryapi.Model;
+package io.github.Psyllo.reviewLibraryapi.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
