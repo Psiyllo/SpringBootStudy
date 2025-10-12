@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -31,5 +32,14 @@ public class AutorController {
         List<Autor> listar = service.listar();
         List<AutorResponseDTO> lista = listar.stream().map(mapper::toDto).toList();
         return ResponseEntity.ok().body(lista);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deletar (@PathVariable("id") String id) {
+        var idAutor = UUID.fromString(id);
+        Optional<Autor> autorOptional = service.obterPorId(idAutor);
+
+        service.excluir(autorOptional.get());
+        return ResponseEntity.noContent().build();
     }
 }
