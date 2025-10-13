@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "autor")
+@Table(name = "autor_review")
 @Data
 public class Autor {
 

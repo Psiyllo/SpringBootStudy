@@ -30,4 +30,8 @@ public class AutorService {
     public void excluir(Autor autor) {
         repository.delete(autor);
     }
+
+    public void atualizar(Autor autor) {
+        repository.save(autor);
+    }
 }

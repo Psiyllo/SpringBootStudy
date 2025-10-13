@@ -1,5 +1,6 @@
 package io.github.Psyllo.reviewLibraryapi.controller;
 
+import io.github.Psyllo.reviewLibraryapi.dto.AutorRequestDTO;
 import io.github.Psyllo.reviewLibraryapi.dto.AutorResponseDTO;
 import io.github.Psyllo.reviewLibraryapi.mapper.AutorMapper;
 import io.github.Psyllo.reviewLibraryapi.model.Autor;
@@ -41,5 +42,19 @@ public class AutorController {
 
         service.excluir(autorOptional.get());
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> atualizar(@PathVariable("id") String id, @RequestBody AutorRequestDTO dto) {
+        var idAutor = UUID.fromString(id);
+        Optional<Autor> autorOptional = service.obterPorId(idAutor);
+
+        var autor = autorOptional.get();
+        autor.setNome(dto.nome());
+        autor.setDataNascimento(dto.dataNascimento());
+        autor.setNacionalidade(dto.nacionalidade());
+
+        service.atualizar(autorOptional.get());
+        return ResponseEntity.ok().build();
     }
 }
