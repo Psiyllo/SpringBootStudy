@@ -92,6 +92,6 @@ public class AuthorizationServerConfiguration {
 
     @Bean
     public JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource){
-
+        return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource);
     }
 }
