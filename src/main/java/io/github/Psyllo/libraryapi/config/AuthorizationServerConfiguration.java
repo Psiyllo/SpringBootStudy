@@ -107,6 +107,21 @@ public class AuthorizationServerConfiguration {
 
     @Bean
     public AuthorizationServerSettings authorizationServerSettings() {
-        return AuthorizationServerSettings.builder().build();
+        return AuthorizationServerSettings.builder()
+                // obter token
+                .tokenEndpoint("/oauth2/token")
+                // consultar status do token
+                .tokenIntrospectionEndpoint("/oauth2/introspect")
+                // revogar token
+                .tokenRevocationEndpoint("/oauth2/revoke")
+                // authorization endpoint
+                .authorizationEndpoint("/oauth2/authorize")
+                // informações do usuario OID
+                .oidcUserInfoEndpoint("/oauth2/userinfo")
+                // obter chave publica pra verificar a assinatura do token
+                .jwkSetEndpoint("/oauth2/jwks")
+                // endpoint para logout
+                .oidcLogoutEndpoint("/oauth2/logout")
+                .build();
     }
 }
