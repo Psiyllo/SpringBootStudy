@@ -4,6 +4,7 @@ import io.github.Psyllo.libraryapi.Security.CustomAuthentication;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.net.Authenticator;
@@ -23,5 +24,10 @@ public class LoginViewController {
             System.out.println(customAuthentication.getUsuario());
         }
         return "Eae doidão" + authentication.getName();
+    }
+    @GetMapping("/authorized")
+    @ResponseBody
+    public String getAuthorizationCode(@RequestParam("code") String code){
+        return "Seu authorization code: " + code;
     }
 }
