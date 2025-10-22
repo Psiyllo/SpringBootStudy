@@ -1,0 +1,67 @@
+# =========================
+# 🧠 Java / Spring Boot
+# =========================
+target/
+*.jar
+*.war
+*.ear
+*.class
+*.log
+
+# =========================
+# 🧰 Maven
+# =========================
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+.settings/
+dependency-reduced-pom.xml
+
+# =========================
+# ⚙️ IntelliJ IDEA
+# =========================
+.idea/
+*.iml
+*.iws
+out/
+*.ipr
+
+# =========================
+# 🧩 Eclipse (caso alguém abra lá)
+# =========================
+.classpath
+.project
+.settings/
+
+# =========================
+# 🧾 Logs & temporários
+# =========================
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+
+# =========================
+# 🔐 Configs locais
+# =========================
+.env
+*.local.properties
+*.credentials
+*.key
+*.pem
+
+# =========================
+# 🧪 Testes / Coverage
+# =========================
+/surefire-reports/
+/failsafe-reports/
+/jacoco.exec
+/site/
+
+# =========================
+# 🐳 Docker & IDE auxiliares
+# =========================
+/.docker/
+docker-compose.override.yml
+/.vscode/
