@@ -65,8 +65,11 @@ public class AuthorizationServerConfiguration {
     @Bean
     public TokenSettings tokenSettings() {
         return TokenSettings.builder()
+                //access_token : token utilizado nas requisições
                 .accessTokenFormat(OAuth2TokenFormat.SELF_CONTAINED)
+                //refresh_token : para renovar o access
                 .accessTokenTimeToLive(Duration.ofMinutes(60))
+                .refreshTokenTimeToLive(Duration.ofMinutes(90))
                 .build();
     }
 
