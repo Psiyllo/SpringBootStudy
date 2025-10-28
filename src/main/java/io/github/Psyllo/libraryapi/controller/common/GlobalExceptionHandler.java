@@ -5,6 +5,7 @@ import io.github.Psyllo.libraryapi.Exception.OperacaoNaoPermitidaException;
 import io.github.Psyllo.libraryapi.Exception.RegistroDuplicadoException;
 import io.github.Psyllo.libraryapi.controller.dto.ErroCampo;
 import io.github.Psyllo.libraryapi.controller.dto.ErroResposta;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
@@ -18,11 +19,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestControllerAdvice
+@Slf4j
 public class GlobalExceptionHandler{
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public ErroResposta handleMethodArgumentNotValidException(MethodArgumentNotValidException e){
+
+        log.error("Erro de Validação: {}", e.getMessage());
+
         List<FieldError> fieldError = e.getFieldErrors();
         List<ErroCampo> listaErros = fieldError
                 .stream()
@@ -66,6 +71,7 @@ public class GlobalExceptionHandler{
     @ExceptionHandler(RuntimeException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErroResposta handleErrosNaoTratados(RuntimeException e){
+        log.error("Erro inesperado", e);
         return new ErroResposta(
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 "Ocorreu um erro inesperado. Entre em contato com a administração do sistema",
