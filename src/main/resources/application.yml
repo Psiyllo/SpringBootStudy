@@ -36,7 +36,7 @@ logging:
     root: warn
     io:
       github:
-        Psyllo: warn
+        Psyllo: trace
     org:
       springframework:
         web: debug
